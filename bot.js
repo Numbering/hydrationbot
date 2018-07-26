@@ -4,7 +4,7 @@ const config = require("./config.json");
 const fs = require("fs")
 
 var NOTIFY_CHANNEL;
-var name = /.*/;
+var name = "Kevin";
 
 // Stuff for the timer
 const targetMinute = 48; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
@@ -33,12 +33,13 @@ client.on("message", (message) => {
   // Behaviour for setting channel to be reminded
   if (message.content.startsWith(config.prefix + "setchannel")) {
 	  NOTIFY_CHANNEL = message.channel;
-	  NOTIFY_CHANNEL.sendMessage("This channel will now get reminders!");
+	  NOTIFY_CHANNEL.send("This channel will now get reminders!");
   }
   
-  // Fun little thing
-  if (message.content.startsWith(config.prefix + "whyis" + name + "socool")) {
-	  message.channel.send("Beacuse " + name + " drinks water");
+  // Easter egg
+  if (message.content.startsWith(config.prefix + "howcoolis ")) {
+	  name = message.content.substring(10);
+	  message.channel.send("At least 3 cool beacuse " + name + " drinks water");
   }
 
 });
