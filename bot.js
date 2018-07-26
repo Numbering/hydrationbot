@@ -5,7 +5,7 @@ const fs = require("fs")
 
 // Stuff for the timer
 var NOTIFY_CHANNEL;
-const targetMinute = 45; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+const targetMinute = 48; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
@@ -30,7 +30,7 @@ client.on("message", (message) => {
   
   // Behaviour for setting channel to be reminded
   if (message.content.startsWith(config.prefix + "setchannel")) {
-	  let curChannel = message.channel.parentID;
+	  let curChannel = message.channel.id;
 	  config.channel = curChannel;
 	  
 	  fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
