@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const fs = require("fs");
-var prefix = ("~")
+const config = require("./config.json");
+const fs = require("fs")
 
 // Stuff for the timer
 var NOTIFY_CHANNEL;
@@ -16,13 +16,16 @@ client.on("ready", () => {
 client.on("message", (message) => {
 
   // Exit and stop if no prefix or author of message is bot
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
+  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
 
   // Behaviour for changing prefix command
-  if (message.content.startsWith(prefix + "changeprefix")) {
+  if (message.content.startsWith(config.prefix + "changeprefix")) {
     let newPrefix = message.content.split(" ").slice(1,2)[0];
-    prefix = newPrefix;
-    message.channel.send("Prefix changed to: " + prefix);
+    config.prefix = newPrefix;
+
+    fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
+
+    message.channel.send("Prefix changed to: " + newPrefix);
   }
 
 });
