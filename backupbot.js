@@ -27,16 +27,6 @@ client.on("message", (message) => {
 
     message.channel.send("Prefix changed to: " + newPrefix);
   }
-  
-  // Behaviour for setting channel to be reminded
-  if (message.content.startsWith(config.prefix + "setchannel")) {
-	  let curChannel = message.channel.id;
-	  config.channel = curChanel;
-	  
-	  fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
-	  
-	  message.channel.send("You will now get reminders in this channel!");
-  }
 
 });
 
