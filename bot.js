@@ -10,7 +10,7 @@ const targetMinute = 22; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 client.on("ready", () => {
   console.log("I am ready!");
-  NOTIFY_CHANNEL = client.channels.find('id', '447279958960898048');
+  NOTIFY_CHANNEL = client.channels.find('id', (config.channel);
 });
 
 client.on("message", (message) => {
