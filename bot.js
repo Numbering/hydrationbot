@@ -5,7 +5,7 @@ const fs = require("fs")
 
 // Stuff for the timer
 var NOTIFY_CHANNEL;
-const targetMinute = 22; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+const targetMinute = 25; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
