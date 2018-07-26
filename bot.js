@@ -5,12 +5,12 @@ const fs = require("fs")
 
 // Stuff for the timer
 var NOTIFY_CHANNEL;
-const targetMinute = 37; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+const targetMinute = 45; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
   console.log("I am ready!");
-  NOTIFY_CHANNEL = client.channels.find('id', (config.channel));
+  NOTIFY_CHANNEL = client.channels.get(config.channel);
 });
 
 client.on("message", (message) => {
