@@ -3,9 +3,11 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const fs = require("fs")
 
-// Stuff for the timer
 var NOTIFY_CHANNEL;
-const targetMinute = 40; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+var name = /.*/;
+
+// Stuff for the timer
+const targetMinute = 48; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
@@ -31,6 +33,12 @@ client.on("message", (message) => {
   // Behaviour for setting channel to be reminded
   if (message.content.startsWith(config.prefix + "setchannel")) {
 	  NOTIFY_CHANNEL = message.channel;
+	  NOTIFY_CHANNEL.sendMessage("This channel will now get reminders!");
+  }
+  
+  // Fun little thing
+  if (message.content.startsWith(config.prefix + "whyis" + name + "socool")) {
+	  message.channel.send("Beacuse " + name + " drinks water");
   }
 
 });
