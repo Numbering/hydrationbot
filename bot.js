@@ -7,7 +7,7 @@ var NOTIFY_CHANNEL;
 var name = "Kevin";
 
 // Stuff for the timer
-const targetMinute = 48; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+const targetMinute = 0; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
