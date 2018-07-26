@@ -5,12 +5,12 @@ const fs = require("fs")
 
 // Stuff for the timer
 var NOTIFY_CHANNEL;
-const targetMinute = 52; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
+const targetMinute = 0; // 0 - 1:00, 2:00; 30 - 1:30, 2:30
 
 
 client.on("ready", () => {
   console.log("I am ready!");
-  NOTIFY_CHANNEL = client.channels.find("name", (config.channel));
+  NOTIFY_CHANNEL = client.channels.find('id', '447279958960898048');
 });
 
 client.on("message", (message) => {
@@ -26,16 +26,6 @@ client.on("message", (message) => {
     fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
 
     message.channel.send("Prefix changed to: " + newPrefix);
-  }
-  
-  // Behaviour for setting channel to be reminded
-  if (message.content.startsWith(config.prefix + "setchannel")) {
-	  let curChannel = message.channel.name;
-	  config.channel = curChannel;
-	  
-	  fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
-	  
-	  message.channel.send("You will now get reminders in this channel!");
   }
 
 });
