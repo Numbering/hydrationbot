@@ -37,4 +37,4 @@ setInterval(function() {
   NOTIFY_CHANNEL.sendMessage("Remember to drink water and stay hydrated!");
 }, 60 * 1000); // Check every minute
 
-client.login(config.token);
+client.login(process.env.BOT_TOKEN);
