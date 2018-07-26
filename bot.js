@@ -39,7 +39,7 @@ client.on("message", (message) => {
   // Easter egg
   if (message.content.startsWith(config.prefix + "howcoolis ")) {
 	  name = message.content.substring(11);
-	  message.channel.send("At least 3 cool beacuse " + name + " drinks water");
+	  message.channel.send("At least 3 cool because " + name + " drinks water");
   }
 
 });
