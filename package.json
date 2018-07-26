@@ -1,0 +1,19 @@
+{
+  "name": "hydrationbot",
+  "version": "1.0.0",
+  "description": "Stay hydrated kids.",
+  "main": "bot.js",
+  "engines": {
+	  "node": "8.11.3",
+	  "npm": "5.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+	"start": "node bot.js"
+  },
+  "author": "Kevin Zou",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.3.2"
+  }
+}
