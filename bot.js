@@ -31,7 +31,7 @@ client.on("message", (message) => {
   // Behaviour for setting channel to be reminded
   if (message.content.startsWith(config.prefix + "setchannel")) {
 	  let curChannel = message.channel.id;
-	  config.channel = curChanel;
+	  config.channel = curChannel;
 	  
 	  fs.writeFile("./config.json", JSON.stringify(config), (err) => console.error);
 	  
